@@ -95,6 +95,11 @@ class AddressBook {
             }
         }
     }
+
+    countContact(array) {
+        let count = array.reduce((a, b) => a.concat(b), []).length;
+        console.log("Number of contact : " + count);
+    }
 }
 
 module.exports = AddressBook;
