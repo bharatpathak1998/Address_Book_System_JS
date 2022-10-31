@@ -73,6 +73,28 @@ class AddressBook {
             }
         }
     }
+
+    deleteContact(array) {
+        let count = 0;
+        if (!array.length) {
+            console.log("There Is No Contact Available!");
+        } else {
+            let deleteName = prompt("Enter First Name Of A Person To Delete : ");
+            for (let i = 0; i < array.length; i++) {
+                let contact = array[i];
+                if ((contact.getFirstName() == deleteName)) {
+                    let index = array.indexOf(deleteName);
+                    array.splice(index, 1);
+                    console.log("Contact Deleted Successfully");
+                    count++;
+                    break;
+                }
+            }
+            if (count == 0) {
+                console.log("Please Enter Valid First Name!");
+            }
+        }
+    }
 }
 
 module.exports = AddressBook;
