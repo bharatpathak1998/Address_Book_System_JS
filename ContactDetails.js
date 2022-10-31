@@ -14,8 +14,12 @@ class ContactDetails {
         if (pattern.test(firstName)) {
             this.firstName = firstName;
         } else {
-            throw "First name is not valid"
+            throw "First name is not valid";
         }
+    }
+
+    getFirstName() {
+        return this.firstName;
     }
 
     setLastName(lastName) {
