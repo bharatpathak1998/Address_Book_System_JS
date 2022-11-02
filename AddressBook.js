@@ -10,6 +10,12 @@ class AddressBook {
 
         person.setFirstName(prompt("Enter First Name : "));
         person.setLastName(prompt("Enter Last Name : "));
+
+        if (array.find(contact => (contact.firstName + contact.lastName) == (person.firstName + person.lastName))) {
+            console.log("Given Name is Already Exists!");
+            return;
+        }
+
         person.setAddress(prompt("Enter Address : "));
         person.setCity(prompt("Enter City Name : "));
         person.setState(prompt("Enter State Name : "));
