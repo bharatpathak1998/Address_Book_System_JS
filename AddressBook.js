@@ -106,6 +106,24 @@ class AddressBook {
         let count = array.reduce((a, b) => a.concat(b), []).length;
         console.log("Number of contact : " + count);
     }
+
+    searchByCityOrState(array) {
+        let contacts = new Array();
+        console.log("1.Search Person By City  2.Search Person By State  0.Exit");
+        let choice = parseInt(prompt());
+        if (choice == 1) {
+            let city = prompt("Enter City Name To Search Person : ");
+            contacts = array.filter(contact => contact.city === city)
+        }
+        if (choice == 2) {
+            let state = prompt("Enter State Name To Search Person : ");
+            contacts = array.filter(contact => contact.state === state)
+        }
+        if (choice == 0) {
+            return;
+        }
+        console.log(contacts.toString());
+    }
 }
 
 module.exports = AddressBook;
